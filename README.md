@@ -1,131 +1,108 @@
-# 🎓 ML_Project: Student Performance Predictor
+# 🎓 Student Performance Prediction (ML Project)
 
-This project uses machine learning models to predict student performance based on input features like study time, parental education, and test scores. It includes Logistic Regression and Decision Tree models.
+This project is a machine learning-based solution that predicts student performance based on study hours and attendance. It utilizes both Logistic Regression and Decision Tree models to classify whether a student is likely to **Pass** or **Fail**.
+
+---
 
 ## 📁 Project Structure
 
+```
 ML_Project/
-├── main.py # Script to train or use the model
 ├── data/
-│ └── student_data.csv # Student dataset
+│   └── student_data.csv          # Input dataset
 ├── model/
-│ ├── log_reg_model.pkl # Logistic Regression model
-│ ├── dt_model.pkl # Decision Tree model
-│ └── scaler.pkl # Standard Scaler for input features
-
-bash
-Copy
-Edit
-
-## ⚙️ How to Use
-
-1. Clone the repo:
-   ```bash
-   git clone https://github.com/your-username/ML_Project.git
-   cd ML_Project
-Install packages:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Run the script:
-
-bash
-Copy
-Edit
-python main.py
-👨‍💻 Author
-Md. Shakib Hossen
-GitHub Profile
-
-markdown
-Copy
-Edit
-
-3. Click `File` → `Save As`
-4. File name:  
-README.md
-
-yaml
-Copy
-Edit
-Save as type: `All Files`  
-Location: `Inside the ML_Project folder`
-
-Then click **Save**.
+│   ├── log_reg_model.pkl         # Trained Logistic Regression model
+│   ├── dt_model.pkl              # Trained Decision Tree model
+│   └── scaler.pkl                # Trained StandardScaler object
+└── main.py                       # Main training and evaluation script
+```
 
 ---
 
-### 🔹 Step 3: Create `requirements.txt`
+## 🧠 Features Used
 
-1. Open **Notepad**
-2. Paste this:
-numpy
-pandas
-scikit-learn
-joblib
-
-yaml
-Copy
-Edit
-
-3. Save it as:
-   - File name: `requirements.txt`
-   - Type: All Files
-   - Location: Inside `ML_Project`
-
-Then click **Save**.
+- **Hours** (study hours per day)
+- **Attendance** (% attendance in class)
 
 ---
 
-## 🌐 PART 4: Create a Repository on GitHub
+## ⚙️ How It Works
+
+1. **Data Loading**:
+   - Reads the CSV dataset containing student records.
+
+2. **Preprocessing**:
+   - Handles missing values in attendance.
+   - Converts categorical labels in "Result" to binary values.
+
+3. **Feature Scaling**:
+   - Normalizes input features using `StandardScaler`.
+
+4. **Model Training**:
+   - Trains:
+     - Logistic Regression
+     - Decision Tree Classifier
+
+5. **Model Evaluation**:
+   - Evaluates both models using:
+     - Accuracy Score
+     - Confusion Matrix
+
+6. **Model Saving**:
+   - Saves models and scaler using `pickle` in the `model/` directory.
 
 ---
 
-### 🔹 Step 1: Log In
+## 🚀 Getting Started
 
-1. Visit [https://github.com](https://github.com)
-2. Log in or Sign Up (if new)
+### Prerequisites
 
----
-
-### 🔹 Step 2: Create a New Repo
-
-1. Top right ➝ Click your profile ➝ Click `Your Repositories`
-2. Click **New**
-3. Fill these:
-   - **Repository name**: `ML_Project`
-   - **Description**: Student Performance Predictor using ML
-   - ✅ Choose **Public**
-   - ❌ DO NOT check "Initialize with README"
-4. Click **Create Repository**
-
-GitHub will now show a page with terminal commands — **don't close it yet**!
-
----
-
-## 💻 PART 5: Upload Your Project from PC to GitHub
-
----
-
-### 🔹 Step 1: Initialize Git in Local Folder
-
-Go back to the Git Bash/PowerShell window that’s open in your `ML_Project` folder.
-
-Type:
+Make sure you have Python 3 and the following packages installed:
 
 ```bash
-git init
-Then:
+pip install pandas scikit-learn
+```
 
-bash
-Copy
-Edit
-git add .
-Then:
+### Running the Project
 
-bash
-Copy
-Edit
-git commit -m "Initial commit: Student Performance ML project"
+```bash
+python main.py
+```
+
+This will train the models and output performance metrics to the console.
+
+---
+
+## 📊 Sample Output
+
+```
+Sample Data:
+   Hours  Attendance Result
+0    4.0        88.0   Pass
+...
+
+Training data: (80, 2), Test data: (20, 2)
+
+Logistic Regression Accuracy: 85%
+Decision Tree Accuracy: 80%
+```
+
+---
+
+## 📦 Output Files
+
+- `log_reg_model.pkl`: Trained Logistic Regression model.
+- `dt_model.pkl`: Trained Decision Tree model.
+- `scaler.pkl`: Fitted scaler for transforming input features.
+
+---
+
+## 📌 Author
+
+**Your Name** – *Machine Learning Enthusiast*
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License.
