@@ -99,7 +99,7 @@ Decision Tree Accuracy: 80%
 
 ## 📌 Author
 
-**Your Name** – *Machine Learning Enthusiast*
+**Md. Shakib Hossen** – *Machine Learning Enthusiast*
 
 ---
 
